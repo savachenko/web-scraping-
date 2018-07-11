@@ -1,0 +1,17 @@
+﻿ catching all the exemplars of calss .subtd3 with BeautifulSoup,  Select
+
+
+
+
+import re
+r = requests.get('http://www.irk.gov.ru/events/news/detail.php?ID=19587',  'html.parser')
+
+soup = BeautifulSoup(r.content, 'html.parser')
+
+for i in soup.select(".subtd3"):
+    result = i.text
+    print(result)
+
+
+
+
