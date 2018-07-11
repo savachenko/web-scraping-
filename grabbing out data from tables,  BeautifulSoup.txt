@@ -1,0 +1,15 @@
+﻿
+
+grabbing out data from tables,  BeautifulSoup
+
+------------------------------------------
+
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+html = urlopen("http://www.b17.ru/forum/topic.php?id=121014&p=1000&ok=1#607")
+bsObj = BeautifulSoup(html, "lxml")
+nameList = bsObj.findAll("td", {"class":"mes qq"})
+for name in nameList:
+    print(name.get_text())
+----------------------------------------
